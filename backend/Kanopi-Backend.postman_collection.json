@@ -1,0 +1,54 @@
+{
+	"info": {
+		"_postman_id": "c379fca4-5838-4f84-b63d-3c9f478a70d1",
+		"name": "Kanopi-Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "24395432"
+	},
+	"item": [
+		{
+			"name": "ColorSwatches",
+			"item": [
+				{
+					"name": "GetAllSwatches",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"brgb\",\n    \"name\": \"white\",\n    \"red\": 255,\n    \"green\": 255,\n    \"blue\": 1000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5001/api/swatches"
+					},
+					"response": []
+				},
+				{
+					"name": "Regenerate",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"brgb\",\n    \"name\": \"testnewname\",\n    \"red\": 255,\n    \"green\": 255,\n    \"blue\": 1000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5001/api/swatches/regenerate"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
