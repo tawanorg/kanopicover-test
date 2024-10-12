@@ -3,7 +3,8 @@ from typing import Dict, Union
 
 class HexStrategy(ColorSwatch):
     """
-    A class representing a Hex color swatch.
+    HexStrategy class for representing a Hex color swatch. It is simple #RRGGBB format.
+    Reference: https://en.wikipedia.org/wiki/Web_colors#Hex_triplet
     """
     def __init__(self, name: str, hex_value: str):
         super().__init__(name)
