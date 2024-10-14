@@ -25,6 +25,6 @@
 
 ### Preview
 
-![Preview](./frontend/public/preview.png)
+![Preview](./frontend.png)
 
 [Frontend Documentation](./frontend/README.md)
