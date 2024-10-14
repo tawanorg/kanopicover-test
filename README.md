@@ -28,3 +28,9 @@
 ![Preview](./frontend.png)
 
 [Frontend Documentation](./frontend/README.md)
+
+## What if I have more time?
+
+- Make sure frontend and backend are typed safe using `ts-json-schema-generator` and `openapi-typescript`
+- Add Swagger UI for the API documentation
+- Add more test coverage
