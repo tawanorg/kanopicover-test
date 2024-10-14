@@ -1,7 +1,5 @@
 # Kanopi Coding Challenge
-
-## Running the project
- 
+  
 ## Prerequisites
 
 - Docker
