@@ -23,4 +23,8 @@
 
 ## Frontend
 
+### Preview
+
+![Preview](./frontend/public/preview.png)
+
 [Frontend Documentation](./frontend/README.md)
