@@ -71,3 +71,9 @@ class ColorSwatch(ABC):
             raise ValueError("BRGB values must be between 0 and 10000")
         return value
  
+    @abstractmethod
+    def to_color(self) -> str:
+        """
+        Convert the color swatch to a color value.
+        """
+        raise NotImplementedError("Subclasses must implement this method")

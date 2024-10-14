@@ -13,13 +13,16 @@ class GenericColorSwatch(ColorSwatch):
         self.type = swatch_type
         self._properties = properties
     
+    def to_color(self):
+        return self._properties.get("color")
+    
     def to_dict(self):
         return {"name": self.name, "type": self.type, **self._properties}
 
 def test_swatch_repository_operations(swatches):
     # Test adding and retrieving swatches
-    rgb_swatch = GenericColorSwatch("white", "rgb", {"red": 255, "green": 255, "blue": 255})
-    hsl_swatch = GenericColorSwatch("blue", "hsl", {"hue": 240, "saturation": 100, "lightness": 50})
+    rgb_swatch = GenericColorSwatch("white", "rgb", {"red": 255, "green": 255, "blue": 255, "color": "rgb(255, 255, 255)"})
+    hsl_swatch = GenericColorSwatch("blue", "hsl", {"hue": 240, "saturation": 100, "lightness": 50, "color": "hsl(240, 100%, 50%)"})
     
     swatches.add_swatch(rgb_swatch)
     swatches.add_swatch(hsl_swatch)

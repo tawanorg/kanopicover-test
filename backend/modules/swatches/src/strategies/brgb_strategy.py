@@ -16,6 +16,9 @@ class BRGBStrategy(ColorSwatch):
         self._blue = self.validate_brgb_value(blue)
         self._green = self.validate_brgb_value(green)
         self._red = self.validate_brgb_value(red)
+        
+    def to_color(self) -> str:
+        return f"rgb({self._red}, {self._green}, {self._blue})"
  
     def to_dict(self) -> Dict[str, Union[int, str]]:
         """
@@ -27,5 +30,6 @@ class BRGBStrategy(ColorSwatch):
             "red": self._red,
             "green": self._green,
             "blue": self._blue,
+            "color": self.to_color()
         }
   

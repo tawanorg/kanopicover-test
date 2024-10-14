@@ -15,7 +15,7 @@ def index():
     return "This is the kanopi app test by @tawanorg - https://github.com/tawanorg"
 
 # Register the swatches blueprint API
-app.register_blueprint(swatches_blueprint, url_prefix='/api/swatches')
+app.register_blueprint(swatches_blueprint, url_prefix='/v1/swatches')
 # Register the new blueprint here
-# app.register_blueprint(new_blueprint, url_prefix='/api/x-module')
+# app.register_blueprint(new_blueprint, url_prefix='/v1/x-module')
 

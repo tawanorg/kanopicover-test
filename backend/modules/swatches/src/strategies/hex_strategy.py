@@ -22,9 +22,13 @@ class HexStrategy(ColorSwatch):
             raise ValueError("Hex value must start with '#'")
         return hex_value
 
+    def to_color(self) -> str:
+        return self._hex_value
+
     def to_dict(self) -> Dict[str, Union[str, int]]:
         return {
             "type": self.type, 
             "name": self.name, 
-            "hex": self._hex_value
+            "hex": self._hex_value,
+            "color": self.to_color()
         }

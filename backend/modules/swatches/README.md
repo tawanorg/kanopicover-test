@@ -28,8 +28,8 @@ Follow TDD approach: You should add the new strategy to test cases first. Then a
  
 ```python
 @pytest.mark.parametrize("name, hex_value, expected", [
-    ("SuperRed", "#FF0000", {"type": "hex", "name": "SuperRed", "hex": "#FF0000"}),
-    ("SuperGreen", "#00FF00", {"type": "hex", "name": "SuperGreen", "hex": "#00FF00"}),
+    ("SuperRed", "#FF0000", {"type": "hex", "name": "SuperRed", "hex": "#FF0000", "color": "#FF0000}),
+    ("SuperGreen", "#00FF00", {"type": "hex", "name": "SuperGreen", "hex": "#00FF00", "color": "#00FF00"}),
 ])
 def test_hex_strategy_valid_values(name, hex_value, expected):
     hex_swatch = HexStrategy(name, hex_value=hex_value)
@@ -48,12 +48,16 @@ class HexStrategy(ColorSwatch):
         
         self.type = "hex"
         self._hex_value = hex_value
+
+    def to_color(self) -> str:
+        return self._hex_value
     
     def to_dict(self) -> Dict[str, Union[str, int]]:
         return {
             "type": self.type, 
             "name": self.name, 
-            "hex": self._hex_value
+            "hex": self._hex_value,
+            "color": self.to_color()
         }
 ```
 

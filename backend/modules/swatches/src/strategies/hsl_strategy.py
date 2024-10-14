@@ -16,6 +16,9 @@ class HSLStrategy(ColorSwatch):
         self._hue = self.validate_hue_value(hue)
         self._saturation = self.validate_saturation_lightness_value(saturation)
         self._lightness = self.validate_saturation_lightness_value(lightness)
+        
+    def to_color(self) -> str:
+        return f"hsl({self._hue}, {self._saturation}%, {self._lightness}%)"
          
     def to_dict(self) -> Dict[str, Union[int, str]]:
         """
@@ -26,6 +29,7 @@ class HSLStrategy(ColorSwatch):
             "name": self.name,
             "hue": self._hue,
             "saturation": self._saturation,
-            "lightness": self._lightness
+            "lightness": self._lightness,
+            "color": self.to_color()
         }
      

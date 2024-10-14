@@ -1,4 +1,6 @@
+import json
 from flask import Blueprint, jsonify, request
+import random
 from ..repositories.swatch_repository import SwatchRepository
 from ..strategies.rgb_strategy import RGBStrategy
 from ..strategies.hsl_strategy import HSLStrategy
@@ -17,7 +19,13 @@ swatches.add_swatch(HSLStrategy("Green", hue=120, saturation=100, lightness=50))
 @swatches_blueprint.route('/', methods=['GET'])
 def index(): 
     return jsonify(swatches.get_swatches()), 200
- 
+
+@swatches_blueprint.route('/random', methods=['GET'])
+def random_swatches():
+    # Make 1 random swatche and add them to the repository each time this is called
+    swatches.add_swatch(RGBStrategy("Random RGB", red=random.randint(0, 255), green=random.randint(0, 255), blue=random.randint(0, 255)))
+     
+    return jsonify(swatches.get_swatches()), 200
 @swatches_blueprint.route('/regenerate', methods=['PUT'])
 def regenerate_swatches():
     # get request data
