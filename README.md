@@ -20,12 +20,11 @@
 [Backend API Documentation](./backend/README.md)
 
 ## Frontend
+[Frontend Documentation](./frontend/README.md)
 
 ### Preview
 
 ![Preview](./frontend.png)
-
-[Frontend Documentation](./frontend/README.md)
 
 ## What if I have more time?
 
